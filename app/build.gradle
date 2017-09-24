@@ -1,0 +1,10 @@
+apply plugin: 'com.github.johnrengelman.shadow'
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'com.github.mgrzeszczak.javaprojectboilerplate.App'
+        )
+    }
+}

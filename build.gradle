@@ -3,13 +3,13 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.1'
+        classpath "com.github.jengelman.gradle.plugins:shadow:${shadowVersion}"
     }
 }
 
 subprojects {
     group 'com.github.mgrzeszczak'
-    version '1.0'
+    version projectVersion
 
     apply plugin: 'java'
 
@@ -20,8 +20,8 @@ subprojects {
     }
 
     dependencies {
-        compile 'org.apache.logging.log4j:log4j-core:2.8.2'
-        testCompile 'junit:junit:4.12'
-        testCompile 'org.spockframework:spock-core:1.1-groovy-2.4-rc-2'
+        compile "org.apache.logging.log4j:log4j-core:${log4jVersion}"
+        testCompile "junit:junit:${junitVersion}"
+        testCompile "org.spockframework:spock-core:${spockVersion}"
     }
 }
